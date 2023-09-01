@@ -8,7 +8,9 @@
     "start": "node $DEBUGGER app.js",
     "stop": "pkill --signal SIGINT letschat",
     "migrate": "migroose",
-    "test": "mocha ./app/tests"
+    "test": "mocha ./app/tests",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -96,7 +98,8 @@
     "passport-local": "1.0.0",
     "passport.socketio": "3.5.1",
     "require-directory": "^2.1.1",
-    "require-tree": "^1.1.1"
+    "require-tree": "^1.1.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "eslint": "^1.10.3",
@@ -110,5 +113,6 @@
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
     "shortid": "^2.2.4"
-  }
+  },
+  "snyk": true
 }
